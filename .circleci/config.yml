@@ -22,6 +22,6 @@ jobs:
     
 workflows:
   version: 2
-    installjava:
-      jobs:
-        - install_java
+  installjava:
+    jobs:
+      - install_java
