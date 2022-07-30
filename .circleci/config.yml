@@ -46,4 +46,6 @@ workflows:
   version: 2
   installjava:
     jobs:
-      - installingDependencies
+      - installingDependencies:
+         context: uat
+      
