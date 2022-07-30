@@ -11,6 +11,10 @@ jobs:
     working_directory: ~/repo
     
     steps:
+      
+      - checkout:
+          path: ~/repo
+
       - run:
           name: Java
           command: |
@@ -29,6 +33,11 @@ jobs:
             export GRADLE_HOME=/opt/gradle/latest
             export PATH=${GRADLE_HOME}/bin:${PATH}
             gradle -v
+
+      - run:
+          name: CopyingFiles
+          command:
+            scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null /home/circleci/repo/timelog.csv test@cciuatserver.centralindia.cloudapp.azure.com:/tmp/
 
 
     
