@@ -21,7 +21,7 @@ jobs:
     
     
 workflows:
-  version: 2.1
+  version: 2
     installjava:
       jobs:
         - install_java:
