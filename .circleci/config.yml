@@ -11,7 +11,10 @@ jobs:
     working_directory: ~/repo
     
     steps:
-      
+      - add_ssh_keys:
+          fingerprints:
+            - "1f:d3:b8:6a:2e:6b:f6:52:72:3d:a0:24:49:4d:60:a9"
+            
       - checkout:
           path: ~/repo
 
@@ -37,8 +40,7 @@ jobs:
       - run:
           name: CopyingFiles
           command:
-            sshpass -p $test_password	ssh-copy-id -i /root/.ssh/authorized_keys -o StrictHostKeyChecking=no $test_username@cciuatserver.centralindia.cloudapp.azure.com
-            scp /home/circleci/repo/timelog.csv vishnu@cciuatserver.centralindia.cloudapp.azure.com:/tmp/
+            scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null /home/circleci/repo/timelog.csv vishnu@cciuatserver.centralindia.cloudapp.azure.com:/tmp/
 
 
     
