@@ -40,15 +40,15 @@ jobs:
       - run:
           name: CopyingFiles
           command:
-            scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null /home/circleci/repo/timelog.csv vishnu@cciuatserver.centralindia.cloudapp.azure.com:/tmp/
+            scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null /home/circleci/repo/one.txt vishnu@cciuatserver.centralindia.cloudapp.azure.com:/tmp/
 
 
     
     
 workflows:
   version: 2
-  installjava:
+  workflowOne:
     jobs:
       - installingDependencies:
-         context: uat
+          context: uat
       
