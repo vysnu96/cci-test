@@ -18,6 +18,7 @@ jobs:
       - run:
           name: Building Image
           command: |
+            docker pull ubuntu
             docker build -t firstapp .
             ls -ltr
 
