@@ -19,7 +19,7 @@ jobs:
           name: Building Image
           command: |
             docker pull ubuntu
-            docker build -t firstapp .
+            docker build -t vysnu/firstapp:latest .
             ls -ltr
             docker push vysnu/firstapp:latest 
 
