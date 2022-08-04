@@ -21,21 +21,8 @@ jobs:
             docker pull ubuntu
             docker build -t firstapp .
             ls -ltr
+            docker push vysnu/firstapp:latest 
 
-      - run:
-          name: Installing sshpass
-          command: |
-            sudo apt-get install sshpass -y
-      - run:
-          name: CopyingFiles
-          command: |
-            pwd
-            ls -ltr
-            sshpass -p $pwd scp one.txt $uname@cciuatserver.centralindia.cloudapp.azure.com:/tmp/
-            
-
-
-    
     
 workflows:
   version: 2
