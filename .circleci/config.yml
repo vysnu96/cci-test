@@ -5,8 +5,8 @@
 version: 2.1
 jobs:
   installingDependencies:
-    machine:
-      image: cimg/base:2022.11
+    docker:
+      - image: cimg/base:2022.11
         
     steps:
       - checkout
