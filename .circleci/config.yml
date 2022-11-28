@@ -6,23 +6,12 @@ version: 2.1
 jobs:
   installingDependencies:
     machine:
-      image: ubuntu-2004:202008-01
-    
-    working_directory: ~/repo
-    
+      image: cimg/base:2022.11
+        
     steps:
-      
-      - checkout:
-          path: ~/repo
-
-      - run:
-          name: Building Image
-          command: |
-            docker pull ubuntu
-            docker build -t vysnu/firstapp:latest .
-            ls -ltr
-            docker login -u=$DOCKER_UNAME -p=$DOCKER_PWD
-            docker push vysnu/firstapp:latest 
+      - checkout
+      - run: echo $MYNAME
+           
 
     
 workflows:
