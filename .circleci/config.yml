@@ -10,7 +10,7 @@ jobs:
         
     steps:
       - checkout
-      - run: echo $MYNAME
+      - run: echo mynameis$MYNAME
            
 
     
